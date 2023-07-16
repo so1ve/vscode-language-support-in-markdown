@@ -1,0 +1,60 @@
+{
+  "name": "html1",
+  "displayName": "html1",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.7",
+  "publisher": "so1ve",
+  "author": "Ray <i@mk1.io> (@so1ve)",
+  "description": "",
+  "homepage": "https://github.com/so1ve/html1#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/so1ve/html1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/so1ve/html1/issues"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "license": "MIT",
+  "main": "./dist/client.js",
+  "icon": "assets/icon.png",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.78.1"
+  },
+  "activationEvents": [
+    "onLanguage:html1"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "html1",
+        "extensions": [
+          ".html1"
+        ]
+      }
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup --external vscode",
+    "pack": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
+    "vscode:prepublish": "nr build"
+  },
+  "devDependencies": {
+    "@html1/language-server": "workspace:*",
+    "@types/vscode": "1.78.1",
+    "@volar/language-server": "~1.9.0",
+    "@volar/vscode": "~1.9.0",
+    "@vscode/vsce": "latest",
+    "vscode-languageclient": "^8.1.0"
+  }
+}

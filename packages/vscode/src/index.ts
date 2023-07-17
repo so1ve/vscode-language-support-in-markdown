@@ -28,16 +28,21 @@ export async function activate(context: vscode.ExtensionContext) {
     },
   };
   const initializationOptions: InitializationOptions = {
-    // no need tsdk because html1 language server do not needed TS support, you can uncomment this line if needed
-    // typescript: { tsdk: require('path').join(vscode.env.appRoot, 'extensions/node_modules/typescript/lib') },
+    typescript: {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
+      tsdk: require("node:path").join(
+        vscode.env.appRoot,
+        "extensions/node_modules/typescript/lib",
+      ),
+    },
   };
   const clientOptions: lsp.LanguageClientOptions = {
-    documentSelector: [{ language: "html1" }],
+    documentSelector: [{ language: "markdown" }],
     initializationOptions,
   };
   client = new lsp.LanguageClient(
-    "html1-language-server",
-    "HTML1 Language Server",
+    "md-language-support-server",
+    "Language Support in Markdown Files Language Server",
     serverOptions,
     clientOptions,
   );
@@ -46,7 +51,7 @@ export async function activate(context: vscode.ExtensionContext) {
   // support for auto close tag
   activateAutoInsertion(
     [client],
-    (document) => document.languageId === "html1",
+    (document) => document.languageId === "markdown",
   );
 
   // support for https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volarjs-labs

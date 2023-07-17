@@ -1,22 +1,22 @@
 {
-  "name": "md-language-support-language-server",
+  "name": "md-language-support-server",
   "version": "0.0.0",
   "packageManager": "pnpm@8.6.7",
   "author": "Ray <i@mk1.io> (@so1ve)",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/so1ve/html1#readme",
+  "homepage": "https://github.com/so1ve/vscode-language-support-in-markdown#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/so1ve/html1.git"
+    "url": "git+https://github.com/so1ve/vscode-language-support-in-markdown.git"
   },
   "bugs": {
-    "url": "https://github.com/so1ve/html1/issues"
+    "url": "https://github.com/so1ve/vscode-language-support-in-markdown/issues"
   },
   "license": "MIT",
   "sideEffects": false,
   "bin": {
-    "html1-name-language-server": "./bin/html1-name-language-server.js"
+    "md-language-support-server": "./bin/md-language-support-server.js"
   },
   "main": "./dist/index.js",
   "typesVersions": {

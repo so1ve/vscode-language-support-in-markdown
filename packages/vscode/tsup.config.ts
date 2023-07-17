@@ -4,7 +4,7 @@ export default defineConfig({
   entry: {
     client: "src/index.ts",
     server:
-      "./node_modules/@html1/language-server/bin/html1-language-server.js",
+      "./node_modules/md-language-support-server/bin/md-language-support-server.js",
   },
   format: ["cjs"],
   shims: false,

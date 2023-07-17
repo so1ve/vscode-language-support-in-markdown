@@ -7,20 +7,20 @@ import {
 import type * as ts from "typescript/lib/tsserverlibrary";
 import * as html from "vscode-html-languageservice";
 
-export const language: Language<Html1File> = {
+export const language: Language<MarkdownFIle> = {
   createVirtualFile(fileName, snapshot) {
-    if (fileName.endsWith(".html1")) {
-      return new Html1File(fileName, snapshot);
+    if (fileName.endsWith(".md")) {
+      return new MarkdownFIle(fileName, snapshot);
     }
   },
-  updateVirtualFile(html1File, snapshot) {
-    html1File.update(snapshot);
+  updateVirtualFile(markdownFile, snapshot) {
+    markdownFile.update(snapshot);
   },
 };
 
 const htmlLs = html.getLanguageService();
 
-export class Html1File implements VirtualFile {
+export class MarkdownFIle implements VirtualFile {
   kind = FileKind.TextFile;
   capabilities = FileCapabilities.full;
   codegenStacks = [];

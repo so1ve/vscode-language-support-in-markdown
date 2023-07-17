@@ -11,26 +11,26 @@ import createCssService from "volar-service-css";
 import createEmmetService from "volar-service-emmet";
 import createHtmlService from "volar-service-html";
 
-import { Html1File, language } from "./language";
+import { MarkdownFIle, language } from "./language";
 
 const plugin: LanguageServerPlugin = (): ReturnType<LanguageServerPlugin> => ({
   extraFileExtensions: [
-    { extension: "html1", isMixedContent: true, scriptKind: 7 },
+    { extension: "md", isMixedContent: true, scriptKind: 7 },
   ],
   resolveConfig(config) {
     // languages
     config.languages ??= {};
-    config.languages.html1 ??= language;
+    config.languages.markdown ??= language;
 
     // services
     config.services ??= {};
     config.services.html ??= createHtmlService();
     config.services.css ??= createCssService();
     config.services.emmet ??= createEmmetService();
-    config.services.html1 ??= (context): ReturnType<Service> => ({
+    config.services.markdown ??= (context): ReturnType<Service> => ({
       provideDiagnostics(document) {
         const [file] = context!.documents.getVirtualFileByUri(document.uri);
-        if (!(file instanceof Html1File)) {
+        if (!(file instanceof MarkdownFIle)) {
           return;
         }
 
@@ -49,7 +49,7 @@ const plugin: LanguageServerPlugin = (): ReturnType<LanguageServerPlugin> => ({
               start: file.document.positionAt(styleNodes[i].start),
               end: file.document.positionAt(styleNodes[i].end),
             },
-            source: "html1",
+            source: "markdown",
             message: "Only one style tag is allowed.",
           });
         }

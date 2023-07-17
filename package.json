@@ -11,12 +11,12 @@
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.4",
-    "@so1ve/eslint-config": "^0.110.4",
+    "@so1ve/eslint-config": "^0.112.3",
     "@types/node": "^18.16.6",
     "bumpp": "^9.1.1",
     "eslint": "^8.45.0",
     "pkgroll": "^1.10.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
   }

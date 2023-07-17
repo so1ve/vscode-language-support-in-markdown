@@ -4,6 +4,7 @@ import type { ExportsInfoForLabs } from "@volar/vscode";
 import { supportLabsVersion } from "@volar/vscode";
 import * as vscode from "vscode";
 import * as lsp from "vscode-languageclient/node";
+import {join}from'path'
 
 let client: lsp.BaseLanguageClient;
 
@@ -13,7 +14,7 @@ export async function activate(context: vscode.ExtensionContext) {
     "dist",
     "server.js",
   );
-  const runOptions = { execArgv: <string[]>[] };
+  const runOptions = { execArgv: [] as string[] };
   const debugOptions = { execArgv: ["--nolazy", `--inspect=${6009}`] };
   const serverOptions: lsp.ServerOptions = {
     run: {
@@ -30,7 +31,7 @@ export async function activate(context: vscode.ExtensionContext) {
   const initializationOptions: InitializationOptions = {
     typescript: {
       // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
-      tsdk: require("node:path").join(
+      tsdk: join(
         vscode.env.appRoot,
         "extensions/node_modules/typescript/lib",
       ),

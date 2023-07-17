@@ -11,7 +11,7 @@ import { getCodeblocks } from "./utils";
 export const language: Language<MarkdownFile> = {
   createVirtualFile(fileName, snapshot) {
     if (fileName.endsWith(".md")) {
-      return new MarkdownFIle(fileName, snapshot);
+      return new MarkdownFile(fileName, snapshot);
     }
   },
   updateVirtualFile(markdownFile, snapshot) {

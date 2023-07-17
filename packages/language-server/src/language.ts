@@ -5,7 +5,8 @@ import {
   FileRangeCapabilities,
 } from "@volar/language-core";
 import type * as ts from "typescript/lib/tsserverlibrary";
-import * as html from "vscode-html-languageservice";
+
+import { getCodeblocks } from "./utils";
 
 export const language: Language<MarkdownFIle> = {
   createVirtualFile(fileName, snapshot) {
@@ -18,8 +19,6 @@ export const language: Language<MarkdownFIle> = {
   },
 };
 
-const htmlLs = html.getLanguageService();
-
 export class MarkdownFIle implements VirtualFile {
   kind = FileKind.TextFile;
   capabilities = FileCapabilities.full;
@@ -28,23 +27,21 @@ export class MarkdownFIle implements VirtualFile {
   fileName!: string;
   mappings!: VirtualFile["mappings"];
   embeddedFiles!: VirtualFile["embeddedFiles"];
-  document!: html.TextDocument;
-  htmlDocument!: html.HTMLDocument;
 
   constructor(
     public sourceFileName: string,
     public snapshot: ts.IScriptSnapshot,
   ) {
-    this.fileName = `${sourceFileName}.html`;
-    this.onSnapshotUpdated();
+    this.fileName = `${sourceFileName}.md`;
+    this.updateSnapshot();
   }
 
   public update(newSnapshot: ts.IScriptSnapshot) {
     this.snapshot = newSnapshot;
-    this.onSnapshotUpdated();
+    this.updateSnapshot();
   }
 
-  onSnapshotUpdated() {
+  updateSnapshot() {
     this.mappings = [
       {
         sourceRange: [0, this.snapshot.getLength()],
@@ -52,49 +49,37 @@ export class MarkdownFIle implements VirtualFile {
         data: FileRangeCapabilities.full,
       },
     ];
-    this.document = html.TextDocument.create(
-      this.fileName,
-      "html",
-      0,
-      this.snapshot.getText(0, this.snapshot.getLength()),
-    );
-    this.htmlDocument = htmlLs.parseHTMLDocument(this.document);
     this.embeddedFiles = [];
-    this.addStyleTag();
+    this.parseMarkdown();
   }
 
-  addStyleTag() {
+  parseMarkdown() {
     let i = 0;
-    for (const root of this.htmlDocument.roots) {
-      if (
-        root.tag === "style" &&
-        root.startTagEnd !== undefined &&
-        root.endTagStart !== undefined
-      ) {
-        const styleText = this.snapshot.getText(
-          root.startTagEnd,
-          root.endTagStart,
-        );
-        this.embeddedFiles.push({
-          fileName: `${this.fileName}.${i++}.css`,
-          kind: FileKind.TextFile,
-          snapshot: {
-            getText: (start, end) => styleText.slice(start, end),
-            getLength: () => styleText.length,
-            getChangeRange: () => undefined,
+
+    const codeblocks = getCodeblocks(
+      this.snapshot.getText(0, this.snapshot.getLength()),
+    );
+
+    for (const { text, position, lang } of codeblocks) {
+      this.embeddedFiles.push({
+        fileName: `${this.fileName}.${i++}.${lang}`,
+        kind: FileKind.TextFile,
+        snapshot: {
+          getText: (start, end) => text.slice(start, end),
+          getLength: () => text.length,
+          getChangeRange: () => undefined,
+        },
+        mappings: [
+          {
+            sourceRange: [position.start.offset!, position.end.offset!],
+            generatedRange: [0, text.length],
+            data: FileRangeCapabilities.full,
           },
-          mappings: [
-            {
-              sourceRange: [root.startTagEnd, root.endTagStart],
-              generatedRange: [0, styleText.length],
-              data: FileRangeCapabilities.full,
-            },
-          ],
-          codegenStacks: [],
-          capabilities: FileCapabilities.full,
-          embeddedFiles: [],
-        });
-      }
+        ],
+        codegenStacks: [],
+        capabilities: FileCapabilities.full,
+        embeddedFiles: [],
+      });
     }
   }
 }

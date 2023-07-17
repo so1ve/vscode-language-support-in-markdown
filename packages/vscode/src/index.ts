@@ -48,11 +48,7 @@ export async function activate(context: vscode.ExtensionContext) {
   );
   await client.start();
 
-  // support for auto close tag
-  activateAutoInsertion(
-    [client],
-    (document) => document.languageId === "markdown",
-  );
+  
 
   // support for https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volarjs-labs
   // ref: https://twitter.com/johnsoncodehk/status/1656126976774791168

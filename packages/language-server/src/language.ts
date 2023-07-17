@@ -8,7 +8,7 @@ import type * as ts from "typescript/lib/tsserverlibrary";
 
 import { getCodeblocks } from "./utils";
 
-export const language: Language<MarkdownFIle> = {
+export const language: Language<MarkdownFile> = {
   createVirtualFile(fileName, snapshot) {
     if (fileName.endsWith(".md")) {
       return new MarkdownFIle(fileName, snapshot);
@@ -19,7 +19,7 @@ export const language: Language<MarkdownFIle> = {
   },
 };
 
-export class MarkdownFIle implements VirtualFile {
+export class MarkdownFile implements VirtualFile {
   kind = FileKind.TextFile;
   capabilities = FileCapabilities.full;
   codegenStacks = [];
@@ -55,6 +55,7 @@ export class MarkdownFIle implements VirtualFile {
 
   parseMarkdown() {
     let i = 0;
+
     const textLength = this.snapshot.getLength();
     const codeblocks = getCodeblocks(this.snapshot.getText(0, textLength));
 

@@ -55,9 +55,9 @@ export class MarkdownFIle implements VirtualFile {
 
   parseMarkdown() {
     let i = 0;
-
+const textLength=this.snapshot.getLength()
     const codeblocks = getCodeblocks(
-      this.snapshot.getText(0, this.snapshot.getLength()),
+      this.snapshot.getText(0, textLength),
     );
 
     for (const { text, position, lang } of codeblocks) {
@@ -71,7 +71,7 @@ export class MarkdownFIle implements VirtualFile {
         },
         mappings: [
           {
-            sourceRange: [position.start.offset!, position.end.offset!],
+            sourceRange: [position.start.offset!, position.end.offset??textLength],
             generatedRange: [0, text.length],
             data: FileRangeCapabilities.full,
           },

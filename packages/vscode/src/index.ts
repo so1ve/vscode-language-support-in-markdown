@@ -1,7 +1,7 @@
 import type { InitializationOptions } from "@volar/language-server";
 import * as serverProtocol from "@volar/language-server/protocol";
 import type { ExportsInfoForLabs } from "@volar/vscode";
-import { activateAutoInsertion, supportLabsVersion } from "@volar/vscode";
+import { supportLabsVersion } from "@volar/vscode";
 import * as vscode from "vscode";
 import * as lsp from "vscode-languageclient/node";
 
@@ -47,8 +47,6 @@ export async function activate(context: vscode.ExtensionContext) {
     clientOptions,
   );
   await client.start();
-
-  
 
   // support for https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volarjs-labs
   // ref: https://twitter.com/johnsoncodehk/status/1656126976774791168

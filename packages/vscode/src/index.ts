@@ -1,10 +1,11 @@
+import { join } from "node:path";
+
 import type { InitializationOptions } from "@volar/language-server";
 import * as serverProtocol from "@volar/language-server/protocol";
 import type { ExportsInfoForLabs } from "@volar/vscode";
 import { supportLabsVersion } from "@volar/vscode";
 import * as vscode from "vscode";
 import * as lsp from "vscode-languageclient/node";
-import {join}from'path'
 
 let client: lsp.BaseLanguageClient;
 
@@ -30,11 +31,7 @@ export async function activate(context: vscode.ExtensionContext) {
   };
   const initializationOptions: InitializationOptions = {
     typescript: {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
-      tsdk: join(
-        vscode.env.appRoot,
-        "extensions/node_modules/typescript/lib",
-      ),
+      tsdk: join(vscode.env.appRoot, "extensions/node_modules/typescript/lib"),
     },
   };
   const clientOptions: lsp.LanguageClientOptions = {

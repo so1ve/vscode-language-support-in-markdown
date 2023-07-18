@@ -3,7 +3,7 @@
   "displayName": "Language Support in Markdown Files",
   "private": true,
   "version": "0.0.0",
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.8",
   "publisher": "so1ve",
   "author": "Ray <i@mk1.io> (@so1ve)",
   "description": "",
@@ -40,7 +40,7 @@
     "vscode:prepublish": "nr build"
   },
   "devDependencies": {
-    "@types/vscode": "1.78.1",
+    "@types/vscode": "1.80.0",
     "@volar/language-server": "~1.9.0",
     "@volar/vscode": "~1.9.0",
     "@vscode/vsce": "latest",

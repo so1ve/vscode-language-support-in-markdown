@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "build": "nr --filter \"./packages/*\" build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . && prettier . --check",
+    "lint:fix": "eslint . --fix && prettier . --write",
     "pack": "nr --filter=\"./packages/vscode\" pack",
     "prerelease": "nr build",
     "release": "bumpp && nr --filter=\"./packages/vscode\" publish",
@@ -11,7 +11,8 @@
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.4",
-    "@so1ve/eslint-config": "^0.112.3",
+    "@so1ve/eslint-config": "^0.113.3",
+    "@so1ve/prettier-config": "^0.113.3",
     "@types/node": "^18.16.6",
     "bumpp": "^9.1.1",
     "eslint": "^8.45.0",

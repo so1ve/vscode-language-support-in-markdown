@@ -38,7 +38,6 @@
     "prepublishOnly": "nr build"
   },
   "dependencies": {
-    "@types/unist": "^3.0.0",
     "@volar/language-core": "~1.9.0",
     "@volar/language-server": "~1.9.0",
     "@volar/language-service": "~1.9.0",

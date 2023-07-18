@@ -70,10 +70,7 @@ export class MarkdownFile implements VirtualFile {
         },
         mappings: [
           {
-            sourceRange: [
-              position.start.offset!,
-              position.end.offset ?? textLength,
-            ],
+            sourceRange: [position.start, position.end],
             generatedRange: [0, text.length],
             data: FileRangeCapabilities.full,
           },

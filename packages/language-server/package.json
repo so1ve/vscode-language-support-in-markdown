@@ -1,52 +1,52 @@
 {
-  "name": "md-language-support-server",
-  "version": "0.0.0",
-  "packageManager": "pnpm@8.6.9",
-  "author": "Ray <i@mk1.io> (@so1ve)",
-  "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/so1ve/vscode-language-support-in-markdown#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/so1ve/vscode-language-support-in-markdown.git"
-  },
-  "bugs": {
-    "url": "https://github.com/so1ve/vscode-language-support-in-markdown/issues"
-  },
-  "license": "MIT",
-  "sideEffects": false,
-  "bin": {
-    "md-language-support-server": "./bin/md-language-support-server.js"
-  },
-  "main": "./dist/index.js",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "pkgroll",
-    "prepublishOnly": "nr build"
-  },
-  "dependencies": {
-    "@volar/language-core": "~1.9.0",
-    "@volar/language-server": "~1.9.0",
-    "@volar/language-service": "~1.9.0",
-    "volar-service-css": "0.0.10",
-    "volar-service-emmet": "0.0.10",
-    "volar-service-html": "0.0.10"
-  },
-  "devDependencies": {
-    "mdast-util-from-markdown": "^2.0.0",
-    "unist-util-visit": "^5.0.0"
-  }
+	"name": "md-language-support-server",
+	"version": "0.0.0",
+	"packageManager": "pnpm@8.6.9",
+	"author": "Ray <i@mk1.io> (@so1ve)",
+	"description": "",
+	"keywords": [],
+	"homepage": "https://github.com/so1ve/vscode-language-support-in-markdown#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/so1ve/vscode-language-support-in-markdown.git"
+	},
+	"bugs": {
+		"url": "https://github.com/so1ve/vscode-language-support-in-markdown/issues"
+	},
+	"license": "MIT",
+	"sideEffects": false,
+	"bin": {
+		"md-language-support-server": "./bin/md-language-support-server.js"
+	},
+	"main": "./dist/index.js",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*",
+				"./dist/index.d.ts"
+			]
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "pkgroll",
+		"prepublishOnly": "nr build"
+	},
+	"dependencies": {
+		"@volar/language-core": "~1.9.0",
+		"@volar/language-server": "~1.9.0",
+		"@volar/language-service": "~1.9.0",
+		"volar-service-css": "0.0.10",
+		"volar-service-emmet": "0.0.10",
+		"volar-service-html": "0.0.10"
+	},
+	"devDependencies": {
+		"mdast-util-from-markdown": "^2.0.0",
+		"unist-util-visit": "^5.0.0"
+	}
 }

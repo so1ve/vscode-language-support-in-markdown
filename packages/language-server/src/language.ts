@@ -54,14 +54,14 @@ export class MarkdownFile implements VirtualFile {
   }
 
   parseMarkdown() {
-    let i = 0;
+    let index = 0;
 
     const textLength = this.snapshot.getLength();
     const codeblocks = getCodeblocks(this.snapshot.getText(0, textLength));
 
     for (const { text, position, lang } of codeblocks) {
       this.embeddedFiles.push({
-        fileName: `${this.fileName}.${i++}.${lang}`,
+        fileName: `${this.fileName}.${index++}.${lang}`,
         kind: FileKind.TextFile,
         snapshot: {
           getText: (start, end) => text.slice(start, end),

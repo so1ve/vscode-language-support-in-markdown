@@ -70,8 +70,8 @@ importers:
   packages/vscode:
     devDependencies:
       '@types/vscode':
-        specifier: 1.81.0
-        version: 1.81.0
+        specifier: 1.82.0
+        version: 1.82.0
       '@volar/language-server':
         specifier: ~1.10.0
         version: 1.10.1
@@ -80,7 +80,7 @@ importers:
         version: 1.10.1
       '@vscode/vsce':
         specifier: latest
-        version: 2.20.1
+        version: 2.21.0
       md-language-support-server:
         specifier: workspace:*
         version: link:../language-server
@@ -983,8 +983,8 @@ packages:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
     dev: true
 
-  /@types/vscode@1.81.0:
-    resolution: {integrity: sha512-YIaCwpT+O2E7WOMq0eCgBEABE++SX3Yl/O02GoMIF2DO3qAtvw7m6BXFYsxnc6XyzwZgh6/s/UG78LSSombl2w==}
+  /@types/vscode@1.82.0:
+    resolution: {integrity: sha512-VSHV+VnpF8DEm8LNrn8OJ8VuUNcBzN3tMvKrNpbhhfuVjFm82+6v44AbDhLvVFgCzn6vs94EJNTp7w8S6+Q1Rw==}
     dev: true
 
   /@types/yargs-parser@21.0.0:
@@ -1379,8 +1379,8 @@ packages:
     resolution: {integrity: sha512-/yrv59IEnmh655z1oeDnGcvMYwnEzNzHLgeYcQCkhYX0xBvYWrAuefoiLcPBUkMpJsb46bqQ6Yv4pwTTQ4d3Qg==}
     dev: false
 
-  /@vscode/vsce@2.20.1:
-    resolution: {integrity: sha512-ilbvoqvR/1/zseRPBAzYR6aKqSJ+jvda4/BqIwOqTxajpvLtEpK3kMLs77+dJdrlygS+VrP7Yhad8j0ukyD96g==}
+  /@vscode/vsce@2.21.0:
+    resolution: {integrity: sha512-KuxYqScqUY/duJbkj9eE2tN2X/WJoGAy54hHtxT3ZBkM6IzrOg7H7CXGUPBxNlmqku2w/cAjOUSrgIHlzz0mbA==}
     engines: {node: '>= 14'}
     hasBin: true
     dependencies:

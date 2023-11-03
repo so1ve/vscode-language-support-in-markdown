@@ -40,7 +40,7 @@
     "vscode:prepublish": "nr build"
   },
   "devDependencies": {
-    "@types/vscode": "1.83.2",
+    "@types/vscode": "1.84.0",
     "@volar/language-server": "~1.10.0",
     "@volar/vscode": "~1.10.0",
     "@vscode/vsce": "latest",

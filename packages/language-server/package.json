@@ -41,7 +41,7 @@
 		"@volar/language-core": "~1.11.1",
 		"@volar/language-server": "~1.11.1",
 		"@volar/language-service": "~1.11.1",
-		"volar-service-css": "0.0.10",
+		"volar-service-css": "0.0.17",
 		"volar-service-emmet": "0.0.10",
 		"volar-service-html": "0.0.10"
 	},

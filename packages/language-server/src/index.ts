@@ -3,9 +3,13 @@ import {
 	createConnection,
 	startLanguageServer,
 } from "@volar/language-server/node";
-import createCssService from "volar-service-css";
-import createEmmetService from "volar-service-emmet";
-import createHtmlService from "volar-service-html";
+import * as CssService from "volar-service-css";
+import * as EmmetService from "volar-service-emmet";
+import * as HtmlService from "volar-service-html";
+import * as JsonService from "volar-service-json";
+import * as PugService from "volar-service-pug";
+import * as TypeScriptService from "volar-service-typescript";
+import * as YamlService from "volar-service-yaml";
 
 import { language } from "./language";
 
@@ -20,9 +24,13 @@ const plugin: LanguageServerPlugin = (): ReturnType<LanguageServerPlugin> => ({
 
 		// services
 		config.services ??= {};
-		config.services.html ??= createHtmlService();
-		config.services.css ??= createCssService();
-		config.services.emmet ??= createEmmetService();
+		config.services.css ??= CssService.create();
+		config.services.emmet ??= EmmetService.create();
+		config.services.html ??= HtmlService.create();
+		config.services.json ??= JsonService.create();
+		config.services.pug ??= PugService.create();
+		config.services.typescript ??= TypeScriptService.create();
+		config.services.yaml ??= YamlService.create();
 
 		return config;
 	},

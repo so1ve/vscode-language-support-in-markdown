@@ -1,50 +1,50 @@
 {
-  "name": "language-support-in-markdown-files",
-  "displayName": "Language Support in Markdown Files",
-  "private": true,
-  "version": "0.0.0",
-  "packageManager": "pnpm@8.10.2",
-  "publisher": "so1ve",
-  "author": "Ray <i@mk1.io> (@so1ve)",
-  "description": "",
-  "homepage": "https://github.com/so1ve/vscode-language-support-in-markdown#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/so1ve/vscode-language-support-in-markdown.git"
-  },
-  "bugs": {
-    "url": "https://github.com/so1ve/vscode-language-support-in-markdown/issues"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "license": "MIT",
-  "main": "./dist/client.js",
-  "icon": "assets/icon.png",
-  "files": [
-    "dist"
-  ],
-  "engines": {
-    "vscode": "^1.78.1"
-  },
-  "activationEvents": [
-    "onLanguage:markdown"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "tsup --external vscode",
-    "pack": "vsce package --no-dependencies",
-    "publish": "vsce publish --no-dependencies",
-    "vscode:prepublish": "nr build"
-  },
-  "devDependencies": {
-    "@types/vscode": "1.84.0",
-    "@volar/language-server": "~1.10.0",
-    "@volar/vscode": "~1.10.0",
-    "@vscode/vsce": "latest",
-    "md-language-support-server": "workspace:*",
-    "vscode-languageclient": "^8.1.0"
-  }
+	"name": "language-support-in-markdown-files",
+	"displayName": "Language Support in Markdown Files",
+	"private": true,
+	"version": "0.0.0",
+	"packageManager": "pnpm@8.10.2",
+	"publisher": "so1ve",
+	"author": "Ray <i@mk1.io> (@so1ve)",
+	"description": "",
+	"homepage": "https://github.com/so1ve/vscode-language-support-in-markdown#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/so1ve/vscode-language-support-in-markdown.git"
+	},
+	"bugs": {
+		"url": "https://github.com/so1ve/vscode-language-support-in-markdown/issues"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"license": "MIT",
+	"main": "./dist/client.js",
+	"icon": "assets/icon.png",
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsup --external vscode",
+		"pack": "vsce package --no-dependencies",
+		"publish": "vsce publish --no-dependencies",
+		"vscode:prepublish": "nr build"
+	},
+	"devDependencies": {
+		"@types/vscode": "1.84.0",
+		"@volar/language-server": "~1.11.1",
+		"@volar/vscode": "~1.11.1",
+		"@vscode/vsce": "latest",
+		"md-language-support-server": "workspace:*",
+		"vscode-languageclient": "^9.0.1"
+	}
 }

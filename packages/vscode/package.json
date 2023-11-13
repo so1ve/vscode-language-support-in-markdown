@@ -20,7 +20,6 @@
 	],
 	"license": "MIT",
 	"main": "./dist/client.js",
-	"icon": "assets/icon.png",
 	"files": [
 		"dist"
 	],

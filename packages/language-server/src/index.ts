@@ -17,6 +17,18 @@ const plugin: LanguageServerPlugin = (): ReturnType<LanguageServerPlugin> => ({
 	extraFileExtensions: [
 		{ extension: "md", isMixedContent: true, scriptKind: 7 },
 	],
+	watchFileExtensions: [
+		"js",
+		"cjs",
+		"mjs",
+		"ts",
+		"cts",
+		"mts",
+		"jsx",
+		"tsx",
+		"json",
+		"md",
+	],
 	resolveConfig(config) {
 		// languages
 		config.languages ??= {};

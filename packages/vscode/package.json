@@ -25,7 +25,7 @@
 		"dist"
 	],
 	"engines": {
-		"vscode": "^1.82.0"
+		"vscode": "^1.84.0"
 	},
 	"activationEvents": [
 		"onLanguage:markdown"

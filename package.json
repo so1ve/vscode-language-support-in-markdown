@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"packageManager": "pnpm@8.10.2",
 	"scripts": {
 		"build": "nr --filter \"./packages/*\" build",
@@ -8,7 +8,7 @@
 		"lint:fix": "eslint . --fix && prettier . --write",
 		"pack": "nr --filter=\"./packages/vscode\" pack",
 		"prerelease": "nr build",
-		"release": "bumpp && nr --filter=\"./packages/vscode\" publish",
+		"release": "bumpp package.json packages/*/package.json --commit --push --tag && nr --filter=\"./packages/vscode\" publish",
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {

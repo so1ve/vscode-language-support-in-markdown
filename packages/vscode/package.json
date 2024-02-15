@@ -3,7 +3,7 @@
 	"displayName": "Language Support in Markdown Files",
 	"private": true,
 	"version": "0.1.1",
-	"packageManager": "pnpm@8.15.2",
+	"packageManager": "pnpm@8.15.3",
 	"publisher": "so1ve",
 	"author": "Ray <i@mk1.io> (@so1ve)",
 	"description": "",

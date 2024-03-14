@@ -60,8 +60,8 @@ importers:
         specifier: ^0.0.17
         version: 0.0.17(@volar/language-service@1.11.1)
       volar-service-json:
-        specifier: ^0.0.17
-        version: 0.0.17(@volar/language-service@1.11.1)
+        specifier: ^0.0.34
+        version: 0.0.34(@volar/language-service@1.11.1)
       volar-service-pug:
         specifier: ^0.0.17
         version: 0.0.17
@@ -7137,10 +7137,10 @@ packages:
       vscode-uri: 3.0.8
     dev: false
 
-  /volar-service-json@0.0.17(@volar/language-service@1.11.1):
-    resolution: {integrity: sha512-28pXc5l5xSDtTDZ73zg0Jklr1KOsqL60wa8SXTJptK7e+PX8PF/cxQ/2FBHQOybdJsk+fn8jx8wF/ky8cuVHag==}
+  /volar-service-json@0.0.34(@volar/language-service@1.11.1):
+    resolution: {integrity: sha512-ZK5DUL9Tod8mv3YnplKbNt5+dAL52JvKDVqMVuB2lbCaR/anGd1uGh4rzEf7fXxE0olvbDOXVDDiZR1rKuTbaA==}
     peerDependencies:
-      '@volar/language-service': ~1.11.0
+      '@volar/language-service': ~2.1.0
     peerDependenciesMeta:
       '@volar/language-service':
         optional: true

@@ -69,8 +69,8 @@ importers:
         specifier: ^0.0.17
         version: 0.0.17(@volar/language-service@1.11.1)(@volar/typescript@1.11.1)
       volar-service-yaml:
-        specifier: ^0.0.17
-        version: 0.0.17(@volar/language-service@1.11.1)
+        specifier: ^0.0.34
+        version: 0.0.34(@volar/language-service@1.11.1)
     devDependencies:
       mdast-util-from-markdown:
         specifier: ^2.0.0
@@ -7182,15 +7182,16 @@ packages:
       vscode-uri: 3.0.8
     dev: false
 
-  /volar-service-yaml@0.0.17(@volar/language-service@1.11.1):
-    resolution: {integrity: sha512-Ab7lmkWW9ggofigb/P/eBt/35wuhZwlH8T6N2Q5qMZ+y/3MBtAq2BDC/vN5kCQxuM1fduTQHwb2V/ZBzXGEiAg==}
+  /volar-service-yaml@0.0.34(@volar/language-service@1.11.1):
+    resolution: {integrity: sha512-R/2Yk24mG/oH7qlSAHKtmYPCy9IUgo12TfWoIWuVRakGv+20xnyfUioN4DK0sQhM1TeP6pviYiMj/hN4UcxzCg==}
     peerDependencies:
-      '@volar/language-service': ~1.11.0
+      '@volar/language-service': ~2.1.0
     peerDependenciesMeta:
       '@volar/language-service':
         optional: true
     dependencies:
       '@volar/language-service': 1.11.1
+      vscode-uri: 3.0.8
       yaml-language-server: 1.14.0
     dev: false
 

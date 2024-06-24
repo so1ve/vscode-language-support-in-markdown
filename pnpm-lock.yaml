@@ -57,8 +57,8 @@ importers:
         specifier: ^0.0.17
         version: 0.0.17(@volar/language-service@1.11.1)
       volar-service-html:
-        specifier: ^0.0.17
-        version: 0.0.17(@volar/language-service@1.11.1)
+        specifier: ^0.0.54
+        version: 0.0.54(@volar/language-service@1.11.1)
       volar-service-json:
         specifier: ^0.0.17
         version: 0.0.17(@volar/language-service@1.11.1)
@@ -7223,6 +7223,20 @@ packages:
       vscode-uri: 3.0.8
     dev: false
 
+  /volar-service-html@0.0.54(@volar/language-service@1.11.1):
+    resolution: {integrity: sha512-FibBrjlzBNiSWrdTj+P+H1dpJ3blJ8N7I+Y9T0r6N0+1nD4Ly88LDsN4EKG7DjyNIh0MDtNBotTT96UiRRurSg==}
+    peerDependencies:
+      '@volar/language-service': ~2.3.1
+    peerDependenciesMeta:
+      '@volar/language-service':
+        optional: true
+    dependencies:
+      '@volar/language-service': 1.11.1
+      vscode-html-languageservice: 5.3.0
+      vscode-languageserver-textdocument: 1.0.11
+      vscode-uri: 3.0.8
+    dev: false
+
   /volar-service-json@0.0.17(@volar/language-service@1.11.1):
     resolution: {integrity: sha512-28pXc5l5xSDtTDZ73zg0Jklr1KOsqL60wa8SXTJptK7e+PX8PF/cxQ/2FBHQOybdJsk+fn8jx8wF/ky8cuVHag==}
     peerDependencies:
@@ -7291,6 +7305,15 @@ packages:
 
   /vscode-html-languageservice@5.1.2:
     resolution: {integrity: sha512-wkWfEx/IIR3s2P5yD4aTGHiOb8IAzFxgkSt1uSC3itJ4oDAm23yG7o0L29JljUdnXDDgLafPAvhv8A2I/8riHw==}
+    dependencies:
+      '@vscode/l10n': 0.0.18
+      vscode-languageserver-textdocument: 1.0.11
+      vscode-languageserver-types: 3.17.5
+      vscode-uri: 3.0.8
+    dev: false
+
+  /vscode-html-languageservice@5.3.0:
+    resolution: {integrity: sha512-C4Z3KsP5Ih+fjHpiBc5jxmvCl+4iEwvXegIrzu2F5pktbWvQaBT3YkVPk8N+QlSSMk8oCG6PKtZ/Sq2YHb5e8g==}
     dependencies:
       '@vscode/l10n': 0.0.18
       vscode-languageserver-textdocument: 1.0.11
